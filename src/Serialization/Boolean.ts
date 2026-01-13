@@ -66,7 +66,7 @@ export function removeWrapper<T>(obj: T): removeWrapper<T> {
   return obj as removeWrapper<T>;
 }
 
-export function Explicit2Boolean<T>(obj: T): boolean | removeWrapper<T> {
+export function ParseExplicit<T>(obj: T): boolean | removeWrapper<T> {
   (obj as unknown) = removeWrapper(obj);
   if (!Boolean(obj)) return false;
   if (obj === true) return true;
@@ -88,14 +88,14 @@ export function Explicit2Boolean<T>(obj: T): boolean | removeWrapper<T> {
 };
 
 export function isAmbiguous(obj: unknown): boolean {
-  return typeof Explicit2Boolean(obj) === 'boolean';
+  return typeof ParseExplicit(obj) === 'boolean';
 }
 
 const ambiguousMsg = (obj: unknown) =>
   `语义模糊的配置文件值 ${obj?.toString() ?? '[无法转换为文字]'}`;
 
-export function deserialize2Boolean(obj: unknown, defaultValue?: boolean): boolean {
-  obj = Explicit2Boolean(obj);
+export function deserialize(obj: unknown, defaultValue?: boolean): boolean {
+  obj = ParseExplicit(obj);
   if (typeof obj === 'boolean') return obj;
   if (typeof defaultValue === 'boolean') {
     console.warn(ambiguousMsg(obj));
