@@ -1,0 +1,41 @@
+// 个人常用的配置
+{
+	"compilerOptions": {
+		"target": "es2024",
+		"lib": ["es2024", "DOM"],
+
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+
+		"module": "es2022",
+		"moduleResolution": "Bundler",
+
+		"allowJs": false,
+		"checkJs": false,
+
+		"noEmit": true,
+
+    // 截至 Typescript 5.7 最严格的选项
+		"strict": true,
+    "allowSyntheticDefaultImports": false,
+		"forceConsistentCasingInFileNames": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true
+	},
+}
