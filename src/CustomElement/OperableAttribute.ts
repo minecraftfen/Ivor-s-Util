@@ -1,4 +1,3 @@
-import { deserialize2Boolean } from '../Serialization/Boolean';
 import { Attributed, AttributedConstructor } from './Attributed';
 
 type operablePropName = `${string}able`;
@@ -95,7 +94,7 @@ export function makeOperable<obj extends Attributed, prop extends operablePropNa
   }
   (obj.constructor as AttributedConstructor).registerAttrs(obj, { [prop]: { defaultValue: false, type: 'boolean' as const } });
   function onSet(v: unknown) {
-    const enable = deserialize2Boolean(v) && obj.isConnected;
+    const enable = Attributed.Reflect.deserializer.boolean(v) && obj.isConnected;
     const handler = listeners.operableStatusChange;
     if (handler) {
       const event = new OperableEvent(

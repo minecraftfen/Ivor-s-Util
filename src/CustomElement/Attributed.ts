@@ -5,7 +5,7 @@ import type {
   ReplaceParameters,
   ReplaceInstanceType
 } from '../Typescript/Generics';
-import { deserialize2Boolean } from '../Serialization/Boolean';
+import { deserialize } from '../Serialization/Boolean';
 
 function type2Name(type: AttributeType<any>) {
   return (type as Exclude<typeof type, string>).name ?? type;
@@ -204,7 +204,7 @@ const deserializer = Object.freeze({
   bigint: BigInt,
   undefined: () => void 0,
   object: JSON.parse.bind(JSON),
-  boolean: deserialize2Boolean,
+  boolean: deserialize,
 }) satisfies {
   [K in Exclude<jsTypeString, 'function'>]: (value: string) => jsType[K]
 };
