@@ -4,6 +4,28 @@ export type Mutable<T> = {
   -readonly [P in keyof T]: T[P];
 };
 
+export type ReplaceInstanceType<
+  TClass extends new (...args: any) => any,
+  TNewInstance
+> = {
+  [K in keyof TClass]: TClass[K];
+} & {
+  new(...args: ConstructorParameters<TClass>): TNewInstance;
+  prototype: TNewInstance;
+};
+
+export type ReplaceParameters<
+  TClass extends new (...args: any) => any,
+  TNewParameters extends any[]
+> = {
+  [K in keyof TClass]: TClass[K];
+} & {
+  new(...args: TNewParameters): InstanceType<TClass>;
+  prototype: InstanceType<TClass>;
+};
+
+// --- jsType --- //
+
 const jsTypeUnknown: unknown = void 0;
 const jsType = typeof jsTypeUnknown;
 export type jsTypeString = typeof jsType;
@@ -29,4 +51,4 @@ export type Type2TypeString<T> =
   T extends symbol ? 'symbol' :
   T extends undefined ? 'undefined' :
   T extends TypeofFunction ? 'function' :
-  'object'
+  'object';

@@ -13,6 +13,7 @@
   "license": "MIT",
   "author": "Yotta <minecraftfen@163.com> (https://github.com/minecraftfen)",
   "type": "module",
+  "module": "./mod.ts",
   "private":"true",
   "devDependencies": {
     "@types/node": "^25.0.7",
