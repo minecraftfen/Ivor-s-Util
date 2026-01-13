@@ -1,2 +1,7 @@
 # Ivor-s-Util
-Personal JSR Util package
+
+个人 JSR 包，用于将我在多个项目中通用的部分代码集中管理。
+
+MIT协议，随意取用。
+
+没有测试，没有标准化，不保证维护。

@@ -1,0 +1,21 @@
+{
+  "name": "ivor-s-util",
+  "version": "0.0.0",
+  "description": "个人 JSR 包，用于将我在多个项目中通用的部分代码集中管理。",
+  "homepage": "https://github.com/minecraftfen/Ivor-s-Util#readme",
+  "bugs": {
+    "url": "https://github.com/minecraftfen/Ivor-s-Util/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minecraftfen/Ivor-s-Util.git"
+  },
+  "license": "MIT",
+  "author": "Yotta <minecraftfen@163.com> (https://github.com/minecraftfen)",
+  "type": "module",
+  "private":"true",
+  "devDependencies": {
+    "@types/node": "^25.0.7",
+    "cspell": "^9.6.0"
+  }
+}
